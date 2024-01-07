@@ -33,7 +33,7 @@ class QueryParamNotExists implements ExpectationInterface
             $headers = $request->getHeaders();
 
             if (isset($headers['content-type']) === true && $headers['content-type'] === 'application/json') {
-                $post = $request->getParsedInput();
+                $post = json_decode($request->getInput(), true);
             } else {
                 $post = $request->getPost();
             }

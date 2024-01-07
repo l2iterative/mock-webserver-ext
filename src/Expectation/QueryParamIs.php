@@ -56,7 +56,11 @@ class QueryParamIs implements ExpectationInterface
             }
 
             if (isset($post[$this->param]) === true) {
-                return $this->matcher->is_matched($post[$this->param]);
+                if (is_string($post[$this->param]) === true) {
+                    return $this->matcher->is_matched($post[$this->param]);
+                } else {
+                    return $this->matcher->is_matched(json_encode($post[$this->param]));
+                }
             } else {
                 return false;
             }
