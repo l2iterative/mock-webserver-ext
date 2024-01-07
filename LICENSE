@@ -1,0 +1,4 @@
+The author intends for this repo to be under MIT license.
+
+It is necessary to credit what reference code has been used in the development.
+We use heavily code from https://github.com/InterNations/http-mock, which is also under MIT license.

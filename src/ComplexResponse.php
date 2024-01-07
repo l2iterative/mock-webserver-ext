@@ -96,7 +96,7 @@ class ComplexResponse implements ResponseInterface
 
     public function getRef(): string
     {
-        return md5('ComplexResponse: '.var_dump([$this->answer, $this->expectations], true));
+        return md5('ComplexResponse: '.var_export([$this->answer, $this->expectations], true));
 
     }//end getRef()
 
