@@ -47,7 +47,14 @@ class QueryParamIs implements ExpectationInterface
                 return false;
             }
         } else if ($this->method === 'POST') {
-            $post = $request->getPost();
+            $headers = $request->getHeaders();
+
+            if (isset($headers['content-type']) === true && $headers['content-type'] === 'application/json') {
+                $post = $request->getParsedInput();
+            } else {
+                $post = $request->getPost();
+            }
+
             if (isset($post[$this->param]) === true) {
                 return $this->matcher->is_matched($post[$this->param]);
             } else {
@@ -55,7 +62,7 @@ class QueryParamIs implements ExpectationInterface
             }
         } else {
             return false;
-        }
+        }//end if
 
     }//end is_expected()
 

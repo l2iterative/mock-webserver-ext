@@ -30,7 +30,15 @@ class QueryParamExists implements ExpectationInterface
         if ($this->method === 'GET') {
             return isset($request->getGet()[$this->param]);
         } else if ($this->method === 'POST') {
-            return isset($request->getPost()[$this->param]);
+            $headers = $request->getHeaders();
+
+            if (isset($headers['content-type']) === true && $headers['content-type'] === 'application/json') {
+                $post = $request->getParsedInput();
+            } else {
+                $post = $request->getPost();
+            }
+
+            return isset($post[$this->param]);
         } else {
             return false;
         }
