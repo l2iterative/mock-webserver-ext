@@ -1,4 +1,4 @@
-# An extension to Jesse Donat's `mock-webserver`
+## An extension to Jesse Donat's `mock-webserver`
 
 <img src="title.png" align="right" alt="a group of actors sitting in a parade" width="300"/>
 
@@ -8,7 +8,7 @@ by adapting the interfaces of `InterNations/http-mock` into it.
 Most of the code appears to be a partial rewriting of the `Matcher` and `Expectation` implementation in `InterNations/http-mock`. 
 Therefore, credits of the code should go to `InterNations/http-mock`.
 
-## Why extending `donatj/mock-webserver`?
+### Why extending `donatj/mock-webserver`?
 
 We could have chosen not to use `donatj/mock-webserver` and instead to use `InterNations/http-mock`. 
 We did not choose this path because `InterNations/http-mock` is somewhat archived, while `donatj/mock-webserver` is 
@@ -16,7 +16,7 @@ actively being maintained.
 
 Another reason why we prefer `donatj/mock-webserver` is the simpler dependency, as `InterNations/http-mock` appears to use the Symfony framework, which could be a heavy machinery.
 
-## How to use
+### How to use
 
 The test script provides a self-explanatory example.
 
@@ -38,6 +38,6 @@ $complex_response
 Since `ComplexResponse` implements `ResponseInterface`, it can be a drop-in replacement.
 
 
-## License
+### License
 
 This package is under the MIT license. For more detail, see [LICENSE](./LICENSE).
