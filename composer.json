@@ -1,0 +1,32 @@
+{
+  "name": "l2iterative/mock-webserver-ext",
+  "description": "A simple extension to donatj/mock-webserver with extra matching",
+  "version": "1.0.0",
+  "license": "MIT",
+  "require": {
+    "donatj/mock-webserver": ">=v2.7"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5",
+    "squizlabs/php_codesniffer": "*"
+  },
+  "authors": [
+  {
+    "name": "Weikeng Chen",
+    "email": "weikeng.chen@l2iterative.com"
+  }],
+  "autoload": {
+    "psr-4": {
+      "L2Iterative\\MockWebServerExt\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "L2Iterative\\MockWebServerExt\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "phpcs": "vendor/bin/phpcs",
+    "phpcbf": "vendor/bin/phpcbf"
+  }
+}
